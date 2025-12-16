@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.api.routers.hello import router as hello_router
 
 load_dotenv()  
 
@@ -25,10 +26,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/hello")
-def hello_world():
-
-    return {
-        "status": "ok",
-        "message": "Hello World"
-    }
+app.include_router(hello_router)
