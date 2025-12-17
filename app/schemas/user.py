@@ -5,8 +5,8 @@ from typing import Optional
 class UserCreate(BaseModel):
     name: Optional[str]
     age: int = Field(gt=0)
-    weight: float = Field(gt=0)
-    height: float = Field(gt=0)
+    weight: str 
+    height: str
     activity_level: str
     goal: str
 
