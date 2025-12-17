@@ -99,4 +99,10 @@ class UserService:
 
     def get_all_users(self, db: Session) -> list[User]:
         return self.repo.get_users(db)
-        
+
+    def get_user_calorie_profile(self, db: Session, user_id: int) -> CalorieProfile:
+        result = self.calorie_profile_repo.get_calorie_profile(db, user_id)[0]
+        result.raw_response = str(result.raw_response)
+        print("Fetched Calorie Profile from DB:", result)
+
+        return result

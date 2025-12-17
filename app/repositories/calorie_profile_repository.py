@@ -13,3 +13,6 @@ class CalorieProfileRepository:
 
     def get_calorie_profiles(self, db: Session) -> list[CalorieProfile]:
         return db.query(CalorieProfile).all() 
+    
+    def get_calorie_profile(self, db: Session, user_id: int) -> list[CalorieProfile]:
+        return db.query(CalorieProfile).filter(CalorieProfile.user_id == user_id).all()

@@ -1,3 +1,4 @@
+from app.schemas.calorie_profile import CalorieProfileResponse
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from app.schemas.user import UserCreate, UserResponse
@@ -20,3 +21,7 @@ def create_user(
 @router.get("/", response_model=List[UserResponse])
 def get_users(db: Session = Depends(get_db)):
     return service.get_all_users(db)
+
+@router.get("/{user_id}/calorie_profile", response_model=CalorieProfileResponse)
+def get_user_calorie_profile(user_id: int, db: Session = Depends(get_db)):
+    return service.get_user_calorie_profile(db, user_id)

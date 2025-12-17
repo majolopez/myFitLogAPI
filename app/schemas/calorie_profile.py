@@ -22,7 +22,6 @@ class CalorieProfileResponse(BaseModel):
     fat: float
     carb: float
     raw_response: str
-    activity_level: str
 
     class Config:
         from_attributes = True
