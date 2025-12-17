@@ -9,6 +9,7 @@ class UserCreate(BaseModel):
     height: str
     activity_level: str
     goal: str
+    sex: str
 
 class UserResponse(BaseModel):
     id: int
@@ -18,6 +19,7 @@ class UserResponse(BaseModel):
     height: float
     activity_level: str
     goal: str
+    sex: str
 
     class Config:
         from_attributes = True

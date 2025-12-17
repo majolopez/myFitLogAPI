@@ -12,4 +12,5 @@ class User(Base):
     height = Column(Float, nullable=False)
     activity_level = Column(String, nullable=False)
     goal = Column(String, nullable=False)
+    sex = Column(String, nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
