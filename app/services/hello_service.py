@@ -3,7 +3,7 @@ from app.repositories.hello_repository import HelloRepository
 class HelloService:
 
     @staticmethod
-    def get_hello():
+    def get_user():
         messages = HelloRepository.get_messages()
         
         return {
