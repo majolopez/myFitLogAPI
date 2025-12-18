@@ -51,7 +51,7 @@ class UserService:
         "macros": {
             "protein_g": number,
             "fat_g": number,
-            "carbs_g": number
+            "carb_g": number
         }
         }
         """
@@ -84,7 +84,7 @@ class UserService:
             tdee=float(data["tdee"]),
             protein=float(data["macros"]["protein_g"]),
             fat=float(data["macros"]["fat_g"]),
-            carb=float(data["macros"]["carbs_g"]),
+            carb=float(data["macros"]["carb_g"]),
             raw_response=content
         )
         return calorie_profile

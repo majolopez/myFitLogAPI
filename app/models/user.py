@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime
 from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship
 from app.core.database import Base
 
 class User(Base):
@@ -14,3 +15,9 @@ class User(Base):
     goal = Column(String, nullable=False)
     sex = Column(String, nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+    meals = relationship(
+    "Meal",
+    back_populates="user",
+    cascade="all, delete-orphan"
+    )

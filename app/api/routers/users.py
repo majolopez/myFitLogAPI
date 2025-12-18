@@ -25,3 +25,7 @@ def get_users(db: Session = Depends(get_db)):
 @router.get("/{user_id}/calorie_profile", response_model=CalorieProfileResponse)
 def get_user_calorie_profile(user_id: int, db: Session = Depends(get_db)):
     return service.get_user_calorie_profile(db, user_id)
+
+@router.get("/{user_id}/calorie_profile", response_model=CalorieProfileResponse)
+def get_user_calorie_profile(user_id: int, db: Session = Depends(get_db)):
+    return service.get_user_calorie_profile(db, user_id)
